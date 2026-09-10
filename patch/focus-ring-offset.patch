@@ -1,0 +1,14 @@
+diff --git a/smali/com/google/android/apps/camera/ui/views/CameraAppRootLayout.smali b/smali/com/google/android/apps/camera/ui/views/CameraAppRootLayout.smali
+index 81110e1..a000139 100644
+--- a/smali/com/google/android/apps/camera/ui/views/CameraAppRootLayout.smali
++++ b/smali/com/google/android/apps/camera/ui/views/CameraAppRootLayout.smali
+@@ -48,6 +48,9 @@
+ 
+     const/4 p2, 0x0
+ 
++    # patch: status bar is hidden in this port; the inset padding mis-centers the 1200px overlays by 62px
++    goto :cond_0
++
+     if-eqz p1, :cond_0
+ 
+     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/views/CameraAppRootLayout;->getRootWindowInsets()Landroid/view/WindowInsets;
